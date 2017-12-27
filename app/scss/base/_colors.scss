@@ -1,0 +1,34 @@
+// ==========================================================================
+// COLOR PALETTE
+// ==========================================================================
+
+
+// Names
+
+$maryland-yellow: #febd17;
+$black: #000;
+$white: #fff;
+$heavy-metal: #151515;
+$silver: #c8c8c8;
+
+
+// Roles
+
+$text-primary: $maryland-yellow;
+$text-black: $black;
+$text-white: $white;
+$text-dark: $heavy-metal;
+$text-light: $silver;
+
+$link-primary: $maryland-yellow;
+$link-primary-shade: darken($maryland-yellow, 10%);
+$link-black: $black;
+$link-white: $white;
+$link-dark: $heavy-metal;
+$link-light: $silver;
+
+$bg-primary: $maryland-yellow;
+$bg-black: $black;
+$bg-white: $white;
+$bg-dark: $heavy-metal;
+$bg-light: $silver;

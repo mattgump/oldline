@@ -1,0 +1,507 @@
+// Project ........ Old Line Barbers
+// VERSION ........ 0.0.1
+
+// ==========================================================================
+// SETTINGS
+// ==========================================================================
+
+@import "./base/reset";
+@import "./base/colors";
+@import "./base/settings";
+
+// ==========================================================================
+// MIXINS
+// ==========================================================================
+
+@mixin transition($time) {
+  transition: all $time ease-out;
+}
+
+@mixin site-max-width {
+  max-width: $site-max-w;
+  margin: 0 auto;
+}
+
+@mixin vertical-align($position) {
+  display: flex;
+  align-items: $position;
+}
+
+// ==========================================================================
+// UTILITIES
+// ==========================================================================
+
+@import "./utils/grid.generator.scss";
+@include gridGenerator();
+
+// ==========================================================================
+// BASE
+// ==========================================================================
+
+@import "./base/typography";
+@import "./base/button";
+
+// ==========================================================================
+// COMPONENTS
+// ==========================================================================
+
+// ==========================================================================
+// MODULES
+// ==========================================================================
+
+// ==========================================================================
+// TOP-LEVEL REGION LAYOUT STYLES
+// ==========================================================================
+
+.section-theme-1 {
+  background: $bg-primary;
+}
+
+.section-theme-2 {
+  background: $bg-dark;
+}
+
+.section-main {
+  margin: 0 auto;
+  max-width: $content-max-w;
+  overflow: auto;
+}
+
+.section-divider {
+  &::before {
+    background: url(../images/bg-stripe.svg) repeat-x top left;
+    content: "";
+    display: block;
+    height: 10px;
+    margin: 0 auto;
+    padding: 0 0 40px;
+    width: 90vw;
+  }
+}
+
+// ==========================================================================
+// HEADER
+// ==========================================================================
+
+.site-header {
+  background: $bg-black;
+  text-align: center;
+}
+
+.site-header__logo {
+  height: auto;
+  min-width: 200px;
+  width: 60%;
+}
+
+.site-header__nav {
+  display: none;
+}
+
+.message-bar {
+  background: $bg-black;
+  color: $text-light;
+  text-align: center;
+
+  & span {
+    color: $text-white;
+    display: block;
+  }
+}
+
+.hero-banner {
+  align-items: center;
+  background: url(../images/bg-hero.jpg) center no-repeat $bg-black;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  min-height: 55vw;
+  overflow: hidden;
+  width: 100%;
+}
+
+.hero-banner__video-btn {
+  border: 0;
+  color: $text-white;
+  font-size: 1.5em;
+  text-align: center;
+  z-index: 10;
+
+  &:hover {
+    border: 0;
+  }
+
+  & img {
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+// @media Queries
+//------------------------------------------------
+
+@media (min-width: 480px) {
+  .site-header {
+    position: relative;
+  }
+
+  .site-header__logo {
+    left: 20px;
+    position: absolute;
+    top: 20px;
+    width: 200px;
+    z-index: 10;
+  }
+
+  .message-bar {
+    font-size: 0.85em;
+    text-align: right;
+  }
+
+  .hero-banner {
+    min-height: 480px;
+    position: relative;
+
+    &::before {
+      background: $bg-black;
+      content: "";
+      height: 400px;
+      left: -550px;
+      position: absolute;
+      top: 0;
+      transform: rotate(-60deg);
+      width: 800px;
+    }
+
+    &::after {
+      background: $bg-black;
+      bottom: -60px;
+      content: "";
+      height: 400px;
+      position: absolute;
+      right: -550px;
+      transform: rotate(-60deg);
+      width: 800px;
+    }
+  }
+
+  .hero-banner__video-btn {
+    padding: 60px;
+
+    & img {
+      margin: 0 auto 20px;
+    }
+  }
+}
+
+@media (min-width: 800px) {
+  .message-bar {
+    & span {
+      display: inline;
+      margin-left: 20px;
+    }
+  }
+
+  .site-header__nav {
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 80px;
+    width: 140px;
+    z-index: 10;
+  }
+
+  .site-header__nav-link {
+    background: $bg-white;
+    border: 0;
+    color: $text-black;
+    display: block;
+    margin-bottom: 3px;
+    padding: 5px;
+    text-align: center;
+    width: 100%;
+
+    &:hover {
+      border: 0;
+    }
+  }
+}
+
+// ==========================================================================
+// INTRO
+// ==========================================================================
+
+// ==========================================================================
+// LOCATIONS
+// ==========================================================================
+
+.location__header {
+  align-items: flex-end;
+  background: $bg-dark;
+  background-size: cover;
+  color: $text-white;
+  display: flex;
+  margin-bottom: 15px;
+  min-height: 168px;
+}
+
+.location__header-location-1 {
+  background: url(../images/bg-location.jpg) center no-repeat $bg-dark;
+}
+
+.location__header-location-2 {
+  background: url(../images/bg-location-downtown.jpg) center no-repeat $bg-dark;
+}
+
+.location__content {
+  // font-size: 1.1rem;
+
+  & > * {
+    margin-bottom: 2.25em;
+  }
+}
+
+.location__info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.location__address {
+  margin-bottom: 0;
+  padding-left: 27px;
+  position: relative;
+
+  &::before {
+    content: url(../images/icon-poll.svg);
+    left: 0;
+    margin-top: -26px;
+    position: absolute;
+    top: 50%;
+  }
+}
+
+.location__map {
+  margin-bottom: 0;
+  position: relative;
+
+  &::before {
+    content: url(../images/icon-map.svg);
+    left: -30px;
+    margin-top: -16px;
+    position: absolute;
+    top: 50%;
+  }
+}
+
+.menu-list {
+  margin-left: 0;
+}
+
+.menu__item {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 0 0.6em;
+  overflow: hidden;
+  padding: 0;
+  position: relative;
+
+  &::before {
+    bottom: 0;
+    content: ". . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ";
+    position: absolute;
+    white-space: nowrap;
+  }
+
+  & span {
+    background: $bg-white;
+    z-index: 1;
+  }
+}
+
+.location__phone {
+  padding-left: 27px;
+  position: relative;
+
+  &::before {
+    content: url(../images/icon-phone.svg);
+    left: 0;
+    margin-top: -18px;
+    position: absolute;
+    top: 50%;
+  }
+}
+
+// ==========================================================================
+//  CALLOUTS
+// ==========================================================================
+
+.callout__header {
+  background: $bg-black;
+  color: $text-white;
+
+  & > * {
+    margin: 0;
+  }
+}
+
+// ==========================================================================
+//  CREW
+// ==========================================================================
+
+.crew-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.crew-card {
+  color: $silver;
+  max-width: 300px;
+  min-height: 420px;
+  overflow: hidden;
+  padding: 200px 20px 40px;
+  position: relative;
+  text-align: center;
+  width: 100%;
+}
+
+.crew-card__pic {
+  @include transition(0.35s);
+  border-radius: 50%;
+  left: 25%;
+  max-width: 50%;
+  position: absolute;
+  top: 30px;
+}
+
+.crew-card__name,
+.crew-card__availbility,
+.crew-card__time {
+  margin-bottom: 0.4em;
+}
+
+.crew-card__name {
+  color: $text-white;
+  font-family: $font-family-primary;
+}
+
+.crew-card__time,
+.crew-card__location {
+  display: inline-block;
+}
+
+.crew-card-panel {
+  @include transition(0.35s);
+  background: $bg-primary;
+  border-top: 5px solid $text-dark;
+  bottom: 0;
+  color: $text-dark;
+  left: 100%;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.crew-card-panel__content {
+  padding: 20px;
+  position: relative;
+}
+
+.crew-card-panel__schedule {
+  margin: 0;
+
+  & li {
+    margin-bottom: .5em;
+  }
+}
+
+.crew-card-panel__day,
+.crew-card-panel__time,
+.crew-card-panel__location {
+  margin: 0;
+}
+
+.crew-card-panel__day {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.crew-card__btn-close {
+  cursor: pointer;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+
+.crew-card--active {
+  & .crew-card-panel {
+    left: 0;
+    opacity: 1;
+  }
+
+  & .crew-card__pic {
+    left: 5px;
+    max-width: 65px;
+    top: 0;
+    z-index: 10;
+  }
+}
+
+// @media Queries
+//------------------------------------------------
+
+// @media (min-width: 480px) {
+//   .crew-wrapper {
+//     display: flex;
+//     flex-wrap: wrap;
+//     justify-content: center;
+//   }
+
+//   .crew-card {
+//     color: $silver;
+//     max-width: 300px;
+//     padding: 20px 20px 40px;
+//     text-align: center;
+//     width: 100%;
+//   }
+
+//   .crew-card__pic {
+//     border-radius: 50%;
+//     margin-bottom: 1.4em;
+//     max-width: 170px;
+//   }
+
+//   .crew-card__name,
+//   .crew-card__time {
+//     margin-bottom: 0.4em;
+//   }
+
+//   .crew-card__name {
+//     color: $text-white;
+//     font-family: $font-family-primary;
+//   }
+
+//   .crew-card__time,
+//   .crew-card__location {
+//     display: block;
+//   }
+// }
+
+// ==========================================================================
+// FOOTER
+// ==========================================================================
+
+.footer-logo {
+  max-width: 60%;
+}
+
+// ==========================================================================
+// HELPER CLASSES
+// ==========================================================================
+
+@import "./utils/helpers";
+
+// * {
+//   background: rgba(144,144,244,.25);
+// }

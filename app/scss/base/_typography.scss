@@ -1,0 +1,148 @@
+// ==========================================================================
+// BASE TYPOGRAPHY STYLES
+// ==========================================================================
+
+
+@import url('https://fonts.googleapis.com/css?family=Cormorant:700i');
+
+$font-family-primary: 'Cormorant', serif;
+
+.font-primary {
+  font-family: $font-family-primary;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  font-family: $font-family-base;
+  font-size: 90%;
+  line-height: 2;
+}
+
+// @media Queries
+//------------------------------------------------
+
+@media (min-width: 480px) {
+
+  body {
+    font-size: 100%;
+    line-height: 1.5;
+  }
+
+}
+
+
+// Default Link Styles
+
+a {
+  border-bottom: 1px solid $link-primary;
+  color: inherit;
+  text-decoration: none;
+
+
+  &:hover {
+    border-bottom: 1px solid $link-primary-shade;
+    text-decoration: none;
+  }
+
+  & img {
+    border: 0;
+  }
+}
+
+
+// Default Header Styles
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: inherit;
+  line-height: 1;
+  margin-top: 0;
+  text-rendering: optimizeLegibility;
+}
+
+h1,
+.h1-like {
+  font-size: 2.25em; // 36px
+  margin-bottom: .5em;
+}
+
+h2,
+.h2-like {
+  font-size: 1.875em; // 30px
+  margin-bottom: .65em;
+}
+
+h3,
+.h3-like {
+  font-size: 1.5em; // 24px
+  margin-bottom: .8em;
+}
+
+h4,
+.h4-like {
+  font-size: 1.125em; // 18px
+  margin-bottom: 1em;
+}
+
+h5,
+.h5-like {
+  font-size: .875em; // 14px
+  margin-bottom: 1.4em;
+}
+
+h6,
+.h6-like {
+  font-size: .75em; // 12px
+  margin-bottom: 1.65em;
+}
+
+
+// Default List Styles
+
+ul,
+ol {
+  font-size: .875em; // 14px
+  margin: 0 0 .75em 1.125em;
+  padding: 0;
+}
+
+ul ul,
+ul ol,
+ol ol,
+ol ul {
+  margin-bottom: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  line-height: 1.428;
+}
+
+.disc {
+  list-style: disc;
+  margin-left: 0;
+  padding-left: 1.125em;
+}
+
+
+// Default Paragraph Styles
+
+p,
+.p-like {
+  font-family: $font-family-base;
+  font-size: .875em; // 14px
+  line-height: 1.428;
+  margin-bottom: .75em;
+}
+
+b,
+strong {
+  font-weight: bold;
+}

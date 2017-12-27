@@ -1,0 +1,25 @@
+// ==========================================================================
+// BUTTONS
+// ==========================================================================
+
+.btn-txt {
+  color: inherit;
+  cursor: pointer;
+  display: inline-block;
+  white-space: nowrap;
+
+  &::after {
+    @include transition(0.25s);
+    content: "\00a0\00bb";
+    left: 0;
+    position: relative;
+  }
+
+  &:hover {
+    color: inherit;
+  }
+
+  &:hover::after {
+    left: 5px;
+  }
+}
